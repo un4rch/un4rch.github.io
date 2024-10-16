@@ -1,2 +1,2 @@
 Inspiracion:
-- [https://www.christogoosen.co.za/](Christo Goosen)
+- [Christo Goosen](https://www.christogoosen.co.za/)
