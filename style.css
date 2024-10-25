@@ -6,9 +6,14 @@
 body {
     background: url('./images/background.png') no-repeat center center fixed;
     background-size: cover;
+    font-family: Arial, sans-serif;
     color: white;
     width: 100%;
     height: 100vh;
+}
+
+body h1 {
+    font-size: 4em;
 }
 
 .main {
@@ -18,15 +23,55 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 3em;
 }
 
 .main_box {
-    width: 80%;
-    height: 20%;
-    background: #111;
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_box img {
+    width: 6em;
+    height: auto;
+}
+
+.main_box_element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .aside {
     display: none;
     position: absolute;
 }
+
+.main_icons {
+    display: flex;
+    gap: 3em;
+}
+
+.main_icons img {
+    width: 2em;
+    height: auto;
+}
+
+.blurred-div {
+    position: relative;
+    width: auto;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Color con transparencia */
+    border-radius: 15px; /* Esquinas redondeadas opcionales */
+    backdrop-filter: blur(20px); /* Aplica el efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para navegadores basados en WebKit */
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/ /* Borde para mejorar la visibilidad */
+    color: white; /* Color del texto para buen contraste */
+    z-index: 1; /* Asegura que el div esté por encima del fondo */
+  }
