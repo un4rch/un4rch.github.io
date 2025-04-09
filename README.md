@@ -6,3 +6,10 @@ Secciones:
 - Conocimientos técnicos y soft-skills
 - Track Record: estudios, certificados (ingles), ...
 - Proyectos: links a GitHub / GitLab, ...
+
+Por añadir:
+- Gestion de Poryectos
+- Ciberseguridad
+- IA
+- Interes en QuantFinance
+- ...
