@@ -1,17 +1,5 @@
-Visit: [https://un4rch.github.io/](https://un4rch.github.io/)
-
-Inspiracion:
-- [Christo Goosen](https://www.christogoosen.co.za/)
-
-Secciones:
-- Quien soy (biografía), pasiones, que me llama la atencion, ...
-- Conocimientos técnicos y soft-skills
-- Track Record: estudios, certificados (ingles), ...
-- Proyectos: links a GitHub / GitLab, ...
-
-Por añadir:
-- Gestion de Poryectos
-- Ciberseguridad
-- IA
-- Interes en QuantFinance
-- ...
+```
+npm install --force
+npm run dev # for dev,  auto-restart when making changes
+npm start # for prod
+```
