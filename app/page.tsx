@@ -128,27 +128,15 @@ export default function HomePage() {
   const [projects, setProjects] = useState([
     {
       id: "1",
-      title: "Finance Dashboard Redesign",
+      title: "Final Degree Project: Autonomous Driving Security Framework for Openpilot",
       description:
-        "A complete overhaul of a financial analytics platform, improving usability and information hierarchy.",
+        "Research into the security of Openpilot against adversarial examples, integrating CARLA, emphasizing the need for robustness in autonomous driving models to ensure reliability and protect human lives.",
       image: "/placeholder.svg?height=400&width=600",
     },
     {
       id: "2",
-      title: "Healthcare Mobile App",
-      description: "A patient-centered mobile application for managing appointments and health records.",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      id: "3",
-      title: "E-commerce Redesign",
-      description: "Revamped user experience for an online retailer, resulting in 35% increase in conversion rate.",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      id: "4",
-      title: "SaaS Product Design",
-      description: "End-to-end design for a project management tool focused on remote teams.",
+      title: "Masters Internship: Prompt Injection Detection System for LLMs",
+      description: "Development of a robust system for detecting prompt injection attacks in large language models, utilizing state-of-the-art algorithms.",
       image: "/placeholder.svg?height=400&width=600",
     },
   ])
@@ -312,15 +300,10 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                I'm a UX/UI designer with over 8 years of experience creating digital products that are both beautiful
-                and functional. My approach combines user-centered design principles with a strong aesthetic sensibility
-                to create experiences that delight users and achieve business goals.
+                I'm Unai, a Computer Science Engineer with a passion for building secure, scalable, and intelligent systems. I hold a degree in Computer Science Engineering and have developed deep expertise in artificial intelligence, cybersecurity, and cloud computing. Beyond writing clean, maintainable code, I'm fascinated by the intersection of finance and technology, and I'm driven to leverage AI to create next-generation FinTech solutions that empower users and deliver real value.
               </p>
               <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-                I specialize in creating intuitive interfaces for complex systems, with a focus on fintech, healthcare,
-                and SaaS products. My process involves deep user research, iterative prototyping, and close
-                collaboration with development teams to ensure designs are implemented with fidelity and attention to
-                detail.
+                I specialize in architecting end-to-end machine learning pipelines and secure cloud infrastructures for complex financial applications. My workflow is rooted in rigorous threat modeling, data-driven experimentation, and agile collaboration with product managers, designers, and compliance teams. Whether it's designing an anomaly-detection system for fraud prevention or optimizing trading algorithms in the cloud, I blend technical rigor with a user-centric mindset to turn innovative ideas into robust, production-ready platforms.
               </p>
             </motion.div>
 
@@ -421,51 +404,32 @@ export default function HomePage() {
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">Senior UX/UI Designer</h4>
-                        <p className="text-[#FF0040] font-medium">TechCorp Solutions</p>
+                        <h4 className="text-lg font-semibold text-white">Generative AI Security Researcher</h4>
+                        <p className="text-[#FF0040] font-medium">Ikerlan S.Coop.</p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        2021 - Present
+                        October 2024 - July 2025
                       </div>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Led design initiatives for enterprise SaaS products, managing a team of 3 designers. 
-                      Increased user engagement by 40% through comprehensive UX research and iterative design processes.
+                      Research on the security of generative AI models, with an emphasis on prompt injections targeting LLMs.
                     </p>
                   </div>
 
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">UX/UI Designer</h4>
-                        <p className="text-[#FF0040] font-medium">Digital Innovations Ltd</p>
+                        <h4 className="text-lg font-semibold text-white">Autonomous Driving Security Researcher</h4>
+                        <p className="text-[#FF0040] font-medium">Ikerlan S.Coop.</p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        2019 - 2021
+                        February 2024 - July 2024
                       </div>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Designed user interfaces for mobile and web applications in fintech sector. 
-                      Collaborated with cross-functional teams to deliver pixel-perfect designs on time.
-                    </p>
-                  </div>
-
-                  <div className="about-box">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Junior Designer</h4>
-                        <p className="text-[#FF0040] font-medium">Creative Studio</p>
-                      </div>
-                      <div className="flex items-center text-gray-400 text-sm">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        2017 - 2019
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Started career focusing on visual design and branding. Developed strong foundation 
-                      in design principles and user-centered design methodologies.
+                      Research into the security of Openpilot against adversarial examples, integrating CARLA, emphasizing the need for robustness in autonomous driving models to ensure reliability and protect human lives.
                     </p>
                   </div>
                 </div>
@@ -486,38 +450,36 @@ export default function HomePage() {
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">Master in UX Design</h4>
-                        <p className="text-[#FF0040] font-medium">University of Deusto</p>
+                        <h4 className="text-lg font-semibold text-white">Master in Data Analysis, Cybersecurity, and Cloud Computing</h4>
+                        <p className="text-[#FF0040] font-medium">University of Mondragon</p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        2016 - 2017
+                        September 2024 - June 2025
                       </div>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Specialized in user experience design, human-computer interaction, and design research methodologies. 
-                      Graduated with honors.
+                      Dual master program focusing on advanced data analysis techniques, cybersecurity measures, and cloud computing architectures.
                     </p>
                   </div>
 
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">Bachelor in Graphic Design</h4>
+                        <h4 className="text-lg font-semibold text-white">Bachelor’s Degree in Computer Engineering with Management and Information Systems.</h4>
                         <p className="text-[#FF0040] font-medium">University of the Basque Country</p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        2012 - 2016
+                        September 2019 - June 2024
                       </div>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Comprehensive study of visual communication, typography, branding, and digital design. 
-                      Strong foundation in design principles and creative problem-solving.
+                      The Bachelor’s Degree in Computer Engineering with Management and Information Systems will equip you to conceive, design, develop, and deploy IT solutions tailored to organizational needs, as well as to specify, plan, lead, and manage projects within the field of Computer Engineering.
                     </p>
                   </div>
 
-                  <div className="about-box">
+                  {/*<div className="about-box">
                     <div className="mb-3">
                       <h4 className="text-lg font-semibold text-white">Certifications</h4>
                     </div>
@@ -535,7 +497,7 @@ export default function HomePage() {
                         Figma Advanced Certification
                       </div>
                     </div>
-                  </div>
+                  </div>*/}
                 </div>
               </motion.div>
             </div>
