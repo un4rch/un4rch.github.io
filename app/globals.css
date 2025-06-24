@@ -1,0 +1,549 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Refined button styles with less intense neon effect */
+  .neon-red {
+    color: white;
+    background-color: #ff0040;
+    box-shadow: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-red:hover {
+    background-color: #ff0040; /* Keep the same intense red */
+    color: white; /* Change text to white for better contrast */
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.8), 0 0 30px rgba(255, 0, 64, 0.4); /* More intense glow */
+    transform: translateY(-3px) scale(1.05); /* Slightly more pronounced lift */
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(5px, -5px) rotate(5deg);
+    }
+    50% {
+      transform: translate(0, -10px) rotate(0deg);
+    }
+    75% {
+      transform: translate(-5px, -5px) rotate(-5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* para escalonar las animaciones */
+  .delay-0 {
+    animation-delay: 0ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-600 {
+    animation-delay: 600ms;
+  }
+
+  /* Download button hover animation - simplified */
+  .download-btn {
+    position: relative;
+    margin-right: 2rem; /* Add right margin to move button to the left */
+  }
+
+  .download-btn .text-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .download-btn:hover .text-content {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .download-btn .icon-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .download-btn:hover .icon-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .download-btn .icon-content svg {
+    color: white;
+  }
+
+  .neon-border {
+    border: 1px solid rgba(255, 0, 64, 0.3);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-border:hover {
+    border-color: #ff0040;
+    box-shadow: 0 0 7px #ff0040, 0 0 14px rgba(255, 0, 64, 0.3);
+    animation: neon-pulse 1.5s ease-in-out infinite;
+    transform: translateY(-6px);
+  }
+
+  /* Contact info box styling - consistent hover effect for all boxes */
+  .contact-info-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-info-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 64, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.4);
+    transform: scale(1.08) translateY(-5px);
+    color: white;
+  }
+
+  .contact-info-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 0, 64, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 1.5s ease;
+  }
+
+  .contact-info-box:hover::after {
+    transform: translateX(100%);
+  }
+
+  .contact-info-box svg {
+    color: #ff0040;
+    flex-shrink: 0;
+    transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 1.2s ease;
+  }
+
+  .contact-info-box:hover svg {
+    transform: scale(1.2) rotate(5deg);
+    color: #ff3366;
+  }
+
+  /* Replace the project-card class with this updated version */
+  .project-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
+
+  .project-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 64, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.3);
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Replace the about-box styles with this updated version */
+
+  .about-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .about-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 64, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.3);
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .about-box h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+    position: relative;
+    display: inline-block;
+  }
+
+  .about-box h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #ff0040;
+    transition: width 0.3s ease;
+  }
+
+  .about-box:hover h3::after {
+    width: 100%;
+  }
+
+  .about-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-box li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-box li svg {
+    position: absolute;
+    left: 0;
+    color: #ff0040;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .about-box:hover li {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-box:hover li:hover {
+    transform: translateX(5px);
+    color: white;
+  }
+
+  /* Fix for nested hover animations */
+  .no-hover-animation {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .no-hover-animation:hover {
+    animation: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Enhanced navbar styles */
+  .nav-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 64, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-container:hover {
+    border-color: rgba(255, 0, 64, 0.6);
+    box-shadow: 0 0 10px rgba(255, 0, 64, 0.3);
+  }
+
+  .nav-item {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .nav-indicator {
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(255, 0, 64, 0.2);
+    box-shadow: 0 0 10px #ff0040, 0 0 20px rgba(255, 0, 64, 0.3);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+  }
+
+  /* Add this class for the contact box */
+  .contact-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .contact-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 64, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.3);
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Update the contact info items */
+  .contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 0, 64, 0.3);
+    box-shadow: 0 0 10px rgba(255, 0, 64, 0.3);
+  }
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 5px #00ff85, 0 0 10px rgba(0, 255, 133, 0.5);
+  }
+}
+
+.pulse-green-circle {
+  animation: pulse-green 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Single line neon border animation */
+.neon-loop-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-line {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.neon-loop-container:hover .neon-line {
+  display: block;
+}
+
+/* Prevent nested animations */
+.neon-loop-container .neon-loop-container:hover .neon-line {
+  display: none;
+}
+
+/* Top line */
+.neon-line-top {
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: #ff0040;
+  box-shadow: 0 0 8px #ff0040, 0 0 16px rgba(255, 0, 64, 0.5);
+  animation: neon-line-top 3s linear infinite;
+}
+
+/* Right line */
+.neon-line-right {
+  top: 0;
+  right: 0;
+  width: 2px;
+  background: #ff0040;
+  box-shadow: 0 0 8px #ff0040, 0 0 16px rgba(255, 0, 64, 0.5);
+  animation: neon-line-right 3s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Bottom line */
+.neon-line-bottom {
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background: #ff0040;
+  box-shadow: 0 0 8px #ff0040, 0 0 16px rgba(255, 0, 64, 0.5);
+  animation: neon-line-bottom 3s linear infinite;
+  animation-delay: 1.5s;
+}
+
+/* Left line */
+.neon-line-left {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: #ff0040;
+  box-shadow: 0 0 8px #ff0040, 0 0 16px rgba(255, 0, 64, 0.5);
+  animation: neon-line-left 3s linear infinite;
+  animation-delay: 2.25s;
+}
+
+@keyframes neon-line-top {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  25.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon-line-right {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  25% {
+    height: 100%;
+    opacity: 1;
+  }
+  25.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon-line-bottom {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  25.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon-line-left {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  25% {
+    height: 100%;
+    opacity: 1;
+  }
+  25.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #ff0040, 0 0 10px #ff0040, 0 0 15px #ff0040;
+  }
+  50% {
+    box-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040;
+  }
+}
+
+/* Navbar indicator pulse animation */
+@keyframes indicator-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #ff0040, 0 0 10px #ff0040;
+  }
+  50% {
+    box-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040;
+  }
+}
+
+.indicator-pulse {
+  animation: indicator-pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
