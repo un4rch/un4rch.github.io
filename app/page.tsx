@@ -450,8 +450,18 @@ export default function HomePage() {
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">Master in Data Analysis, Cybersecurity, and Cloud Computing</h4>
-                        <p className="text-[#FF0040] font-medium">University of Mondragon</p>
+                        <h4 className="text-lg font-semibold text-white">
+                          <a
+                            href="https://www.mondragon.edu/en/master-degree-data-analysis-cybersecurity-cloud-computing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Master in Data Analysis, Cybersecurity, and Cloud Computing
+                          </a>
+                          </h4>
+                        <p className="text-[#FF0040] font-medium">
+                            University of Mondragon
+                        </p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
@@ -466,8 +476,18 @@ export default function HomePage() {
                   <div className="about-box">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">Bachelor’s Degree in Computer Engineering with Management and Information Systems.</h4>
-                        <p className="text-[#FF0040] font-medium">University of the Basque Country</p>
+                        <h4 className="text-lg font-semibold text-white">
+                          <a
+                            href="https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Bachelor's Degree in Computer Engineering with Management and Information Systems.
+                          </a>
+                        </h4>
+                        <p className="text-[#FF0040] font-medium">
+                          University of the Basque Country
+                        </p>
                       </div>
                       <div className="flex items-center text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
