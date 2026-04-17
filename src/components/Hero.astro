@@ -1,0 +1,163 @@
+---
+// Hero section: cinematic portrait + typographic intro + two CTAs.
+// GSAP timeline handles intro stagger; ScrollTrigger drives parallax + fade on scroll.
+---
+
+<section class="hero relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+  <img
+    src="/images/portrait.png"
+    alt="Unai Elorriaga Aramburu"
+    class="hero-portrait"
+    decoding="async"
+    fetchpriority="high"
+  />
+
+  <div class="hero-copy relative z-10 flex flex-col items-center text-center px-6">
+    <h1 class="hero-title-1">I&rsquo;m Unai Elorriaga Aramburu,</h1>
+    <h2 class="hero-title-2">QUANTITATIVE FINANCE.</h2>
+    <div class="hero-ctas mt-10 flex items-center gap-2 md:gap-4">
+      <a href="#contact" class="cta cta-primary">Get in touch</a>
+      <a href="#projects" class="cta cta-ghost">See my projects</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 96px;
+    padding-bottom: 8vh;
+  }
+
+  .hero-portrait {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(760px, 95vw);
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    object-position: top center;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.95;
+    -webkit-mask-image: radial-gradient(ellipse 58% 68% at 50% 42%, #000 52%, transparent 92%);
+    mask-image: radial-gradient(ellipse 58% 68% at 50% 42%, #000 52%, transparent 92%);
+    filter: saturate(1.05) contrast(1.05);
+  }
+
+  .hero-copy {
+    margin-top: 44vh;
+    max-width: 900px;
+  }
+
+  .hero-title-1 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.75rem, 4.5vw, 3rem);
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  .hero-title-2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 4.5vw, 3.25rem);
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 0.25em;
+    white-space: nowrap;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .cta-primary {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 10px 30px -15px rgba(255, 255, 255, 0.5);
+  }
+  .cta-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px -15px rgba(255, 255, 255, 0.7);
+  }
+  .cta-ghost {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .cta-ghost:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .hero-copy {
+      margin-top: 54vh;
+    }
+    .hero-portrait {
+      width: 110vw;
+      max-height: 80vh;
+    }
+    .hero-title-2 {
+      white-space: normal;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const portrait = document.querySelector<HTMLElement>(".hero-portrait");
+  const title1 = document.querySelector<HTMLElement>(".hero-title-1");
+  const title2 = document.querySelector<HTMLElement>(".hero-title-2");
+  const ctas = document.querySelector<HTMLElement>(".hero-ctas");
+  const copy = document.querySelector<HTMLElement>(".hero-copy");
+
+  if (!prefersReduced && portrait && title1 && title2 && ctas && copy) {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.from(portrait, { autoAlpha: 0, scale: 1.05, y: 40, duration: 1.6 })
+      .from(title1, { autoAlpha: 0, y: 30, duration: 1 }, "-=1.0")
+      .from(title2, { autoAlpha: 0, y: 30, duration: 1 }, "-=0.8")
+      .from(ctas, { autoAlpha: 0, y: 30, duration: 0.9 }, "-=0.7");
+
+    gsap.to(portrait, {
+      yPercent: -18,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(copy, {
+      yPercent: -25,
+      autoAlpha: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "60% top",
+        scrub: true,
+      },
+    });
+  }
+</script>

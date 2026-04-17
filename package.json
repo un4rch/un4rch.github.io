@@ -1,0 +1,24 @@
+{
+  "name": "un4rch-portfolio",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.1.0",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/playfair-display": "^5.1.0",
+    "@fontsource/dancing-script": "^5.1.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@tsparticles/engine": "^3.7.0",
+    "@tsparticles/slim": "^3.7.0",
+    "gsap": "^3.12.5",
+    "tailwindcss": "^4.0.0"
+  }
+}

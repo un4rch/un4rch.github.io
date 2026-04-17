@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display Variable", ui-serif, Georgia, serif;
+  --font-script: "Dancing Script", "Playfair Display Variable", cursive;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #ffffff;
+  --color-ink-dim: rgba(255, 255, 255, 0.72);
+  --color-night: #000000;
+}
+
+html {
+  background: var(--color-night);
+  color: var(--color-ink);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

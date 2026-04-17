@@ -1,0 +1,42 @@
+---
+import "@fontsource-variable/playfair-display";
+import "@fontsource/dancing-script/400.css";
+import "@fontsource/dancing-script/700.css";
+import "@fontsource-variable/inter";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Unai Elorriaga Aramburu — Quantitative Finance",
+  description = "Portfolio of Unai Elorriaga Aramburu, Quantitative Finance.",
+} = Astro.props;
+
+const ogImage = new URL("/images/portrait.png", Astro.site ?? "https://un4rch.github.io").toString();
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#000000" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/images/portrait.png" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-black text-white">
+    <slot />
+  </body>
+</html>
